@@ -16,6 +16,10 @@
     text-align: center;
 }
 
+#video {
+    font-size: 30px;
+}
+
 #footer {
     bottom: 0;
     margin-bottom: 0;
