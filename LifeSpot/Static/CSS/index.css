@@ -14,8 +14,14 @@
 
 .video-container {
     text-align: center;
+    
 }
 
+iframe {
+    width: 20%;
+    aspect-ratio: 16 / 9; /* Автоматический расчет высоты */
+    height: auto;
+}
 #video {
     font-size: 30px;
 }
