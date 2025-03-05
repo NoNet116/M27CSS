@@ -107,10 +107,11 @@ button, .search-button {
 }
 
 .walker {
+    display: none; /* Скрываем элемент по умолчанию */
     position: absolute;
     left: 0;
     font-size: 30px; /* Размер шагающего человека */
-   /* animation: walk 25s linear infinite, jump 0.5s ease-in-out infinite;*/
+    /* animation: walk 25s linear infinite, jump 0.5s ease-in-out infinite;*/
     animation: walk 25s linear forwards, disappear 25s linear forwards;
 }
     .walker img {
@@ -119,27 +120,14 @@ button, .search-button {
         margin:20px;
     }
   
-/* Движение слева направо и обратно */
+/* Движение слева направо */
 @keyframes walk {
     from {
         left: 1%;
-        /*  transform: scaleX(1); /* Обычный вид */
     }
 
     to {
         left: 80%;
-        /*  transform: scaleX(-1); /* Отражение (разворот) */
-    }
-}
-
-/* Прыжки вверх-вниз */
-@keyframes jump {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px); /* Подпрыгивание */
     }
 }
 
