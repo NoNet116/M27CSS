@@ -37,6 +37,7 @@ namespace LifeSpot
             // Загружаем отдельные элементы для вставки в шаблон: боковое меню и футер
             string footerHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "footer.html"));
             string sideBarHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "sideBar.html"));
+            string headerHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "header.html"));
 
             app.UseEndpoints(endpoints =>
             {
@@ -46,22 +47,38 @@ namespace LifeSpot
 
                     // Загружаем шаблон страницы, вставляя в него элементы
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
+                        .Replace("<!--HEADER-->", headerHtml)
                         .Replace("<!--SIDEBAR-->", sideBarHtml)
                         .Replace("<!--FOOTER-->", footerHtml);
 
                     await context.Response.WriteAsync(html.ToString());
                 });
 
-                endpoints.MapGet("/testing", async context =>
+                endpoints.MapGet("/about", async context =>
                 {
-                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "testing.html");
+                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "about.html");
 
                     // Загружаем шаблон страницы, вставляя в него элементы
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
+                        .Replace("<!--HEADER-->", headerHtml)
                         .Replace("<!--SIDEBAR-->", sideBarHtml)
                         .Replace("<!--FOOTER-->", footerHtml);
 
                     await context.Response.WriteAsync(html.ToString());
+                });
+
+                endpoints.MapGet("/Static/JS/index.js", async context =>
+                {
+                    var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "JS", "index.js");
+                    var js = await File.ReadAllTextAsync(jsPath);
+                    await context.Response.WriteAsync(js);
+                });
+
+                endpoints.MapGet("/Static/CSS/button.css", async context =>
+                {
+                    var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "CSS", "button.css");
+                    var css = await File.ReadAllTextAsync(cssPath);
+                    await context.Response.WriteAsync(css);
                 });
 
                 endpoints.MapGet("/Static/CSS/index.css", async context =>
@@ -71,18 +88,26 @@ namespace LifeSpot
                     await context.Response.WriteAsync(css);
                 });
 
-                endpoints.MapGet("/Static/JS/index.js", async context =>
+                endpoints.MapGet("/Static/CSS/header.css", async context =>
                 {
-                    var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "JS", "index.js");
-                    var js = await File.ReadAllTextAsync(jsPath);
-                    await context.Response.WriteAsync(js);
+                    var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "CSS", "header.css");
+                    var css = await File.ReadAllTextAsync(cssPath);
+                    await context.Response.WriteAsync(css);
                 });
-                endpoints.MapGet("/Static/JS/testing.js", async context =>
+
+                endpoints.MapGet("/Static/CSS/footer.css", async context =>
                 {
-                    var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "JS", "testing.js");
-                    var js = await File.ReadAllTextAsync(jsPath);
-                    await context.Response.WriteAsync(js);
+                    var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "CSS", "footer.css");
+                    var css = await File.ReadAllTextAsync(cssPath);
+                    await context.Response.WriteAsync(css);
                 });
+                endpoints.MapGet("/Static/CSS/about.css", async context =>
+                {
+                    var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "CSS", "about.css");
+                    var css = await File.ReadAllTextAsync(cssPath);
+                    await context.Response.WriteAsync(css);
+                });
+
 
             });
         }

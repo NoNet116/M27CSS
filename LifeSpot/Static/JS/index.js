@@ -26,26 +26,6 @@ let sessionLog = function logSession() {
 }
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    let inputElement = document.querySelectorAll(".search-field")[0];
-   // let buttonElement = document.querySelector(".search-button");
-    
-    // Фильтрация при вводе
-    inputElement.addEventListener("input", filterVideos);
-   
-    // Фильтрация при клике на кнопку
-   // buttonElement.addEventListener("click", filterVideos);
-
-    function filterVideos() {
-        let inputString = inputElement.value.toLowerCase();
-        let elements = document.getElementsByClassName("video-container");
-
-        for (let e of  elements) {
-            let videoText = e.querySelector(".video-title").innerText.toLowerCase();
-            e.style.display = videoText.includes(inputString) ? 'block' : 'none';
-        }
-    }
-});
 
 function filterContent() {
 
@@ -70,12 +50,7 @@ function filterContent() {
 
     
 
-    //Запускаем человечка
-setTimeout(function () {
-    const element = document.querySelector('.walker');
-            element.style.display = 'block'; // Показываем элемент
-            element.classList.add('walker'); // Добавляем класс для запуска анимации
-        }, 1000); // Задержка в n секунд перед запуском анимации
+
 
 
 

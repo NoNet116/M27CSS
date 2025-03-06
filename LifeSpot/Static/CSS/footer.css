@@ -1,0 +1,33 @@
+﻿* {
+    margin: 0;
+}
+#footer {
+    position:  ;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-top: 4px solid silver;
+    background: #4c74f5;
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    float: left;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+    .social-icons a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 20px;
+        transition: 0.3s ease-in-out;
+    }
+
+        .social-icons a:hover {
+            color: #ffeb3b;
+        }

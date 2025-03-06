@@ -1,0 +1,25 @@
+﻿<link href="../Static/CSS/header.css" rel="stylesheet" type="text/css">
+<link href="../Static/CSS/button.css" rel="stylesheet" type="text/css">
+<script>
+    //Запускаем человечка
+    setTimeout(function () {
+        const element = document.querySelector('.walker');
+        element.style.display = 'block'; // Показываем элемент
+        element.classList.add('walker'); // Добавляем класс для запуска анимации
+    }, 1000); // Задержка в n секунд перед запуском анимации
+</script>
+<div id="header">
+    <!--Заголовок страницы-->
+    <h1>LifeSpot - путешествие по миру</h1>
+    <!--Параграф-->
+    <p>Прогулка по улицам</p>
+    <!--Кнопки, обернутые в ссылки-->
+
+    <button onclick="window.location.href='../'">Главная</button>
+    <button onclick="window.location.href='../about'" type="button">О проекте</button>
+
+    <div class="walker">
+        <img src="/Source/walk.gif" alt="Шагающий человек">
+    </div>
+
+</div>
