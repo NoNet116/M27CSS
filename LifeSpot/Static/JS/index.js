@@ -70,12 +70,12 @@ function filterContent() {
 
     
 
-    
+    //Запускаем человечка
 setTimeout(function () {
     const element = document.querySelector('.walker');
             element.style.display = 'block'; // Показываем элемент
             element.classList.add('walker'); // Добавляем класс для запуска анимации
-        }, 1000); // Задержка в 5 секунд перед запуском анимации
+        }, 1000); // Задержка в n секунд перед запуском анимации
 
 
 

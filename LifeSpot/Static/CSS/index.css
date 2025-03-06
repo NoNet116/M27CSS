@@ -110,12 +110,11 @@ button, .search-button {
     display: none; /* Скрываем элемент по умолчанию */
     position: absolute;
     left: 0;
-    font-size: 30px; /* Размер шагающего человека */
-    /* animation: walk 25s linear infinite, jump 0.5s ease-in-out infinite;*/
-    animation: walk 25s linear forwards, disappear 25s linear forwards;
+    font-size: 30px; 
+    animation: walk 5s linear forwards, disappear 5s linear forwards;
 }
     .walker img {
-        width: 70px; /* Размер GIF */
+        width: 70px; 
         height: auto;
         margin:20px;
     }
@@ -127,7 +126,7 @@ button, .search-button {
     }
 
     to {
-        left: 80%;
+        left: 20%;
     }
 }
 
