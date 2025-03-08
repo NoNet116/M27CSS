@@ -1,3 +1,37 @@
-﻿html,body{
-    height:100%;
+﻿#main h1,h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#main form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+ input, textarea {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: vertical;
+}
+
+
+/* Стили для истории сообщений */
+#feedback-history div {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }

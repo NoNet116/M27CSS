@@ -2,24 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="../Static/CSS/about.css" rel="stylesheet" type="text/css">
+    <script src="/Static/JS/about.js"></script>
     <title>LifeSpot</title>
 
 
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <!--HEADER-->
-        </header>
-        <main class="content">
-            <!-- Основной контент страницы -->
-        </main>
+    
+    <!--HEADER-->
 
-        <footer class="footer">
-            <!--FOOTER-->
-        </footer>
+    <div id="main">
+        <h1>Форма обратной связи</h1>
+
+        <form id="feedback-form">
+            <div>
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required value="Batman">
+            </div>
+            <div>
+                <label for="email">Ваш email:</label>
+                <input type="email" id="email" name="email" required value="b@b.ru">
+            </div>
+            <div>
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required>example</textarea>
+            </div>
+            <div>
+                <button type="button" onclick="getContentForm()">Отправить</button>
+                <button type="button" onclick="clearContentForm()">Очистить</button>
+            </div>
+        </form>
+        
+
+        <h2>История отправленных сообщений</h2>
+        <div id="feedback-history"></div>
+        
+        
+
+
     </div>
+    
+    <!--FOOTER-->
+
 </body>
 
 </html>
